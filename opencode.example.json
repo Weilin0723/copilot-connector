@@ -1,0 +1,25 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "azure-vm/YOUR-DEPLOYMENT",
+  "small_model": "azure-vm/YOUR-DEPLOYMENT",
+  "enabled_providers": ["azure-vm"],
+  "provider": {
+    "azure-vm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Azure VM Connector",
+      "options": {
+        "baseURL": "http://127.0.0.1:8765/v1",
+        "apiKey": "{env:CONNECTOR_API_KEY}"
+      },
+      "models": {
+        "YOUR-DEPLOYMENT": {
+          "name": "Azure deployment via VM",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
+        }
+      }
+    }
+  }
+}
